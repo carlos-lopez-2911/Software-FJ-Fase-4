@@ -1,0 +1,135 @@
+2026-11-24 19:26:39,411 INFO 01 Cliente valido: Cliente ficticio
+2026-11-24 19:26:39,447 INFO Finaliza prueba: 01 Cliente valido
+2026-11-24 19:26:39,454 ERROR 02 Nombre vacio: Nombre obligatorio
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 29, in probar
+    resultado = operacion()
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 47, in <lambda>
+    ('02 Nombre vacio', lambda: Cliente('', 'a@example.com'), DatosInvalidos),
+                                ~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\cliente.py", line 7, in __init__
+    raise DatosInvalidos('Nombre obligatorio')
+excepciones.DatosInvalidos: Nombre obligatorio
+2026-11-24 19:26:39,463 INFO Finaliza prueba: 02 Nombre vacio
+2026-11-24 19:26:39,471 ERROR 03 Correo invalido: Correo invalido
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 29, in probar
+    resultado = operacion()
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 48, in <lambda>
+    ('03 Correo invalido', lambda: Cliente('Ana', 'correo'), DatosInvalidos),
+                                   ~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\cliente.py", line 9, in __init__
+    raise DatosInvalidos('Correo invalido')
+excepciones.DatosInvalidos: Correo invalido
+2026-11-24 19:26:39,479 INFO Finaliza prueba: 03 Correo invalido
+2026-11-24 19:26:39,486 INFO 04 Sala: Reserva de sala
+2026-11-24 19:26:39,493 INFO Finaliza prueba: 04 Sala
+2026-11-24 19:26:39,499 INFO 05 Equipo: Alquiler de equipo
+2026-11-24 19:26:39,507 INFO Finaliza prueba: 05 Equipo
+2026-11-24 19:26:39,513 INFO 06 Asesoria: Asesoria especializada
+2026-11-24 19:26:39,522 INFO Finaliza prueba: 06 Asesoria
+2026-11-24 19:26:39,529 ERROR 07 Tarifa negativa: Tarifa debe ser positiva
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 29, in probar
+    resultado = operacion()
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 52, in <lambda>
+    ('07 Tarifa negativa', lambda: Sala(-1), DatosInvalidos),
+                                   ~~~~^^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\servicios.py", line 20, in __init__
+    raise DatosInvalidos('Tarifa debe ser positiva')
+excepciones.DatosInvalidos: Tarifa debe ser positiva
+2026-11-24 19:26:39,540 INFO Finaliza prueba: 07 Tarifa negativa
+2026-11-24 19:26:39,547 INFO 08 Reserva valida: Cliente ficticio: Reserva de sala - Pendiente
+2026-11-24 19:26:39,556 INFO Finaliza prueba: 08 Reserva valida
+2026-11-24 19:26:39,564 ERROR 09 Duracion negativa: Duracion debe ser positiva
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 29, in probar
+    resultado = operacion()
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 54, in <lambda>
+    ('09 Duracion negativa', lambda: s.reservar(s.clientes[0], s.servicios[0], -2), DatosInvalidos),
+                                     ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 24, in reservar
+    return self.agregar(self.reservas, Reserva(cliente, servicio, horas))
+                                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\reserva.py", line 12, in __init__
+    self.horas = servicio.validar(horas)
+                 ~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\servicios.py", line 46, in validar
+    horas = super().validar(horas)
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\servicios.py", line 28, in validar
+    raise DatosInvalidos('Duracion debe ser positiva')
+excepciones.DatosInvalidos: Duracion debe ser positiva
+2026-11-24 19:26:39,575 INFO Finaliza prueba: 09 Duracion negativa
+2026-11-24 19:26:39,582 ERROR 10 Servicio no disponible: Servicio no disponible
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 29, in probar
+    resultado = operacion()
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 55, in <lambda>
+    ('10 Servicio no disponible', lambda: Sala(10000, False).validar(2), ServicioNoDisponible),
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\servicios.py", line 46, in validar
+    horas = super().validar(horas)
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\servicios.py", line 25, in validar
+    raise ServicioNoDisponible('Servicio no disponible')
+excepciones.ServicioNoDisponible: Servicio no disponible
+2026-11-24 19:26:39,591 INFO Finaliza prueba: 10 Servicio no disponible
+2026-11-24 19:26:39,597 INFO 11 Confirmacion: Cliente ficticio: Reserva de sala - Confirmada
+2026-11-24 19:26:39,606 INFO Finaliza prueba: 11 Confirmacion
+2026-11-24 19:26:39,614 INFO 12 Procesamiento: 42840.0
+2026-11-24 19:26:39,622 INFO Finaliza prueba: 12 Procesamiento
+2026-11-24 19:26:39,628 ERROR 13 Descuento invalido: Porcentaje invalido
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 29, in probar
+    resultado = operacion()
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 58, in <lambda>
+    ('13 Descuento invalido', lambda: s.reservas[0].procesar(0, 110), DatosInvalidos),
+                                      ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\reserva.py", line 34, in procesar
+    return self.servicio.calcular_costo(self.horas, impuesto, descuento)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\servicios.py", line 52, in calcular_costo
+    return self.total(self.tarifa*self.validar(horas), impuesto, descuento)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\servicios.py", line 34, in total
+    raise DatosInvalidos('Porcentaje invalido')
+excepciones.DatosInvalidos: Porcentaje invalido
+2026-11-24 19:26:39,637 INFO Finaliza prueba: 13 Descuento invalido
+2026-11-24 19:26:39,644 INFO 14 Cancelacion: Cliente ficticio: Reserva de sala - Cancelada
+2026-11-24 19:26:39,652 INFO Finaliza prueba: 14 Cancelacion
+2026-11-24 19:26:39,660 ERROR 15 Confirmacion incorrecta: Solo se confirman reservas pendientes
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 29, in probar
+    resultado = operacion()
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 60, in <lambda>
+    ('15 Confirmacion incorrecta', lambda: s.reservas[0].confirmar(), ReservaInvalida),
+                                           ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\reserva.py", line 20, in confirmar
+    raise ReservaInvalida('Solo se confirman reservas pendientes')
+excepciones.ReservaInvalida: Solo se confirman reservas pendientes
+2026-11-24 19:26:39,669 INFO Finaliza prueba: 15 Confirmacion incorrecta
+2026-11-24 19:26:39,676 ERROR 16 Conversion incorrecta: Se requiere un numero valido
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\servicios.py", line 9, in numero
+    resultado = float(valor)
+ValueError: could not convert string to float: 'texto'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 29, in probar
+    resultado = operacion()
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\main.py", line 61, in <lambda>
+    ('16 Conversion incorrecta', lambda: Sala('texto'), DatosInvalidos),
+                                         ~~~~^^^^^^^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\servicios.py", line 18, in __init__
+    self.tarifa = numero(tarifa)
+                  ~~~~~~^^^^^^^^
+  File "C:\Users\usuario\Downloads\Software_FJ_Fase4\servicios.py", line 11, in numero
+    raise DatosInvalidos('Se requiere un numero valido') from error
+excepciones.DatosInvalidos: Se requiere un numero valido
+2026-11-24 19:26:39,687 INFO Finaliza prueba: 16 Conversion incorrecta
+2026-11-24 19:26:39,693 INFO 17 Costo equipo: 35000.0
+2026-11-24 19:26:39,701 INFO Finaliza prueba: 17 Costo equipo
+2026-11-24 19:26:39,708 INFO 18 Costo asesoria: 88000.0
+2026-11-24 19:26:39,720 INFO Finaliza prueba: 18 Costo asesoria
+2026-11-24 19:26:39,748 INFO Resultado: 18/18
